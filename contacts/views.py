@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import (
 
 
 class Window(QMainWindow):
-    """Main Window."""
+    # Main Window
 
     def __init__(self, parent=None):
         """Initializer."""
