@@ -1,3 +1,5 @@
+"""This module provides views to manage the contacts table."""
+
 from PyQt5.QtWidgets import (
     QHBoxLayout,
     QMainWindow,
@@ -6,12 +8,12 @@ from PyQt5.QtWidgets import (
 
 
 class Window(QMainWindow):
-    # Main Window
+    """Main Window."""
 
     def __init__(self, parent=None):
         """Initializer."""
         super().__init__(parent)
-        self.setWindowTitle("Ro·lo·dex")
+        self.setWindowTitle("Ro-Lo-Dex")
         self.resize(550, 250)
         self.centralWidget = QWidget()
         self.setCentralWidget(self.centralWidget)

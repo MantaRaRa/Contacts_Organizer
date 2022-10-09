@@ -1,3 +1,4 @@
+"""This module provides Contacts application."""
 import sys
 
 from PyQt5.QtWidgets import QApplication
@@ -5,15 +6,16 @@ from PyQt5.QtWidgets import QApplication
 from .database import createConnection
 from .views import Window
 
+
 def main():
-    # Contacts main function
-    # Create the application
+    """Contacts main function."""
+    # Creating the application
     app = QApplication(sys.argv)
-    # Connect to the database before creating any window
+    # Connecting to the database, if it doesn't it will close the application with an error message
     if not createConnection("contacts.sqlite"):
         sys.exit(1)
-    # Create the main window if the connection succeeded
+    # Creating the main window after connecting to the database
     win = Window()
     win.show()
-    # Run the event loop
+    # Running the loop
     sys.exit(app.exec_())
