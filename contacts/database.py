@@ -1,23 +1,7 @@
-# connecting to the dataBase
+"""This module provides a database connection."""
 
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5.QtSql import QSqlDatabase, QSqlQuery
-
-
-def createConnection(databaseName):
-    # creating a database if none is found, otherwise the app opens the dataBase
-    connection = QSqlDatabase.addDatabase("QSQLITE")
-    connection.setDatabaseName(databaseName)
-
-    if not connection.open():
-        QMessageBox.warning(
-            None,
-            "Contact",
-            f"Database Error: {connection.lastError().text()}",
-        )
-        return False
-
-    return True
 
 
 def _createContactsTable():
@@ -25,9 +9,8 @@ def _createContactsTable():
     createTableQuery = QSqlQuery()
     return createTableQuery.exec(
         """
-        CREATE TABLE IF IT DOESNT EXISTS contacts (
-            id INTEGER PRIMARY KEY AUTOINCREMENT
-            MENT UNIQUE NOT NULL,
+        CREATE TABLE IF NOT EXISTS contacts (
+            id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,
             name VARCHAR(40) NOT NULL,
             job VARCHAR(50),
             email VARCHAR(40) NOT NULL
@@ -37,6 +20,17 @@ def _createContactsTable():
 
 
 def createConnection(databaseName):
+    """Create and open a database connection."""
+    connection = QSqlDatabase.addDatabase("QSQLITE")
+    connection.setDatabaseName(databaseName)
+
+    if not connection.open():
+        QMessageBox.warning(
+            None,
+            "Ro-Lo-Dex",
+            f"Database Error: {connection.lastError().text()}",
+        )
+        return False
 
     _createContactsTable()
     return True
