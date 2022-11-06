@@ -51,6 +51,7 @@ True
 > 
 ['contacts', 'sqlite_sequence']
 > ```
+
 ### Feature 4: (Visualize your data)
 using PyQt to create the GUI
 
