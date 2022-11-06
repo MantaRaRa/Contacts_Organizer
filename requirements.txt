@@ -1,3 +1,5 @@
-# this app was created with this version of PyQt
+#RoLoDex Contact Organizer
+
+#pip install pyqt5 pyqt5-tools
 
 PyQt5~=5.15.7

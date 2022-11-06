@@ -42,5 +42,3 @@ class ContactsModel:
         self.model.submitAll()
         self.model.setEditStrategy(QSqlTableModel.OnFieldChange)
         self.model.select()
-
-

@@ -30,7 +30,7 @@ class Window(QMainWindow):
         self.clearAllButton = QPushButton("Clear All")
         self.table = None
         self.setWindowTitle("Ro-Lo-Dex")
-        self.resize(550, 250)
+        self.resize(720, 480)
         self.centralWidget = QWidget()
         self.setCentralWidget(self.centralWidget)
         self.layout = QHBoxLayout()
@@ -41,16 +41,16 @@ class Window(QMainWindow):
 
     def setupUI(self):
         """Set up the main window's GUI."""
-        # Create the table view widget
+        # Creating the table view widget
         self.table = QTableView()
         self.table.setModel(self.contactsModel.model)
         self.table.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.table.resizeColumnsToContents()
-        # Create buttons
+        # Creating buttons
         self.addButton.clicked.connect(self.openAddDialog)
         self.deleteButton.clicked.connect(self.deleteContact)
         self.clearAllButton.clicked.connect(self.clearContacts)
-        # Lay out the GUI
+        # Laying out the GUI
         layout = QVBoxLayout()
         layout.addWidget(self.addButton)
         layout.addWidget(self.deleteButton)
@@ -114,17 +114,17 @@ class AddDialog(QDialog):
 
     def setupUI(self):
         """Set up the Add Contact dialog's GUI."""
-        # Create line edits for data fields
+        # Creating line edits for data fields
         self.nameField.setObjectName("Name")
         self.jobField.setObjectName("Job")
         self.emailField.setObjectName("Email")
-        # Lay out the data fields
+        # Laying out the data fields
         layout = QFormLayout()
         layout.addRow("Name:", self.nameField)
         layout.addRow("Job:", self.jobField)
         layout.addRow("Email:", self.emailField)
         self.layout.addLayout(layout)
-        # Add standard buttons to the dialog and connect them
+        # Adding standard buttons to the dialog and connecting them
         self.buttonsBox.setOrientation(Qt.Horizontal)
         self.buttonsBox.setStandardButtons(
             QDialogButtonBox.Ok | QDialogButtonBox.Cancel
