@@ -8,7 +8,9 @@ This Python App is created in PyCharm 2022.2.1 (Community Edition) and  leverage
 
 Please Install and Import Dependencies listed below in the Terminal:
 
-```pip install pyqt5 pyqt5-tools```
+```pip install --upgrade pip```
+
+```pip install pyqt5```
 
 Run ```contacts.py``` from the command line or ```SHIFT + F10```
 
@@ -50,7 +52,7 @@ True
 >>> db.tables()
 > 
 ['contacts', 'sqlite_sequence']
-> ```
+```
 
 ### Feature 4: (Visualize your data)
 using PyQt to create the GUI

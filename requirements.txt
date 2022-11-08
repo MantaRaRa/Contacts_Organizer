@@ -1,5 +1,7 @@
 #RoLoDex Contact Organizer
 
-#pip install pyqt5 pyqt5-tools
+#pip install --upgrade pip
+#pip install pyqt5
+
 
 PyQt5~=5.15.7
