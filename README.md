@@ -57,4 +57,4 @@ True
 ### Feature 4: (Visualize your data)
 using PyQt to create the GUI
 
-### Special Thanks to Leodanis Pozo Ramos, Bill Montgomery CodeKY Mentors for their Contributions.
+### Special Thanks to *Leodanis Pozo Ramos*, *Bill Montgomery* and *CodeKY Mentors* for their Contributions.
